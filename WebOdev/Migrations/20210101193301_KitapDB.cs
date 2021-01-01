@@ -56,6 +56,7 @@ namespace WebOdev.Migrations
                     yazarID = table.Column<int>(type: "int", nullable: true),
                     kategoryID = table.Column<int>(type: "int", nullable: true),
                     yorumID = table.Column<int>(type: "int", nullable: true),
+                    resimUrl = table.Column<string>(type: "varchar(max)", unicode: false, nullable: true),
                     puan = table.Column<short>(type: "smallint", nullable: true)
                 },
                 constraints: table =>

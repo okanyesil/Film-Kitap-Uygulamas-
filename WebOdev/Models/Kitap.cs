@@ -12,6 +12,7 @@ namespace WebOdev.Models
         public int? YazarId { get; set; }
         public int? KategoryId { get; set; }
         public int? YorumId { get; set; }
+        public string ResimUrl { get; set; }
         public short? Puan { get; set; }
 
         public virtual Kategori Kategory { get; set; }

@@ -61,6 +61,11 @@ namespace WebOdev.Migrations
                         .HasColumnType("smallint")
                         .HasColumnName("puan");
 
+                    b.Property<string>("ResimUrl")
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(max)")
+                        .HasColumnName("resimUrl");
+
                     b.Property<int?>("YazarId")
                         .HasColumnType("int")
                         .HasColumnName("yazarID");

@@ -11,5 +11,6 @@ namespace WebOdev.Models
        
         public IEnumerable<Kategori> kategori { get; set; }
         public IEnumerable<Kitap> kitap { get; set; }
+        public IEnumerable<Yazar> Yazar { get; set; }
     }
 }

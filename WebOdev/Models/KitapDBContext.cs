@@ -54,6 +54,10 @@ namespace WebOdev.Models
 
                 entity.Property(e => e.Puan).HasColumnName("puan");
 
+                entity.Property(e => e.ResimUrl)
+                    .IsUnicode(false)
+                    .HasColumnName("resimUrl");
+
                 entity.Property(e => e.YazarId).HasColumnName("yazarID");
 
                 entity.Property(e => e.YorumId).HasColumnName("yorumID");

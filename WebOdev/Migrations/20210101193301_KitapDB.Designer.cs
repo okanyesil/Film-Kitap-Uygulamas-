@@ -10,7 +10,7 @@ using WebOdev.Models;
 namespace WebOdev.Migrations
 {
     [DbContext(typeof(KitapDBContext))]
-    [Migration("20210101173034_KitapDB")]
+    [Migration("20210101193301_KitapDB")]
     partial class KitapDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,6 +62,11 @@ namespace WebOdev.Migrations
                     b.Property<short?>("Puan")
                         .HasColumnType("smallint")
                         .HasColumnName("puan");
+
+                    b.Property<string>("ResimUrl")
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(max)")
+                        .HasColumnName("resimUrl");
 
                     b.Property<int?>("YazarId")
                         .HasColumnType("int")

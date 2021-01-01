@@ -3,28 +3,52 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .orange {
+        color: orange;
+    }
+</style>
+<div class="row mt-2">
+    <div class="col-md-10">
+        <div class="row">
+            @foreach (var item in Model.kitap)
+            {
+                <div class="col-md-4 my-1">
+                    <div class="card">
+                        <img class="card-img-top  justify-content-center" src="~/images/@item.ResimUrl" style="width:150px; height:150px" />
+                        <div class="card-body">
+                            <h5 class="card-title">@item.KitapAdi</h5>
+                            <p>@item.Yazar.YazarAdi @item.Yazar.YazarSoyadi</p>
+                            Puan:
+                            @for (int i = 0; i < 5; i++)
+                            {
+                                if (i < @item.Puan)
+                                {
+                                    <span class="fa fa-star orange"></span>
+                                }
+                                else
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
 
-<div class="row">
-    <div class="col-md-8">
-        @foreach (var item in Model.kitap)
-        {
-            <div class="card">
-                <img class="card-img-top" />
-                <div class="card-body">
-                    <h5 class="card-title">@item.KitapAdi</h5>
-                    <p class="card-text">@item.Puan</p>
+                            }
+
+                        </div>
+                    </div>
                 </div>
-            </div>
-        }
+            }
+        </div>
+
     </div>
-    <div class="col-md-4">
-        <table>
+    <div class="col-md-2">
+        <h5>Kategoriler</h5>
+        <ul class="list-group">
             @foreach (var kategori in Model.kategori)
             {
-                <tr>
-                    <td>@kategori.KategoriAdi</td>
-                </tr>
+                <li class="list-group-item">
+                    <a href="/Anasayfa/Index/@kategori.KategoriId">@kategori.KategoriAdi</a>
+                </li>
             }
-        </table>
+        </ul>
     </div>
 </div>
