@@ -24,5 +24,12 @@ namespace WebOdev.Controllers
              kitapModel.Yazar = _context.Yazars.ToList();
             return View(kitapModel);
         }
+        public IActionResult Kategori(int id)
+        {
+            var kitapModel = new KategoryKitapModel();
+            kitapModel.kitap = _context.Kitaps.Where(data => data.KategoryId == id).ToList();
+            kitapModel.Yazar = _context.Yazars.ToList();
+            return View(kitapModel);
+        }
     }
 }
