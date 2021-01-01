@@ -15,29 +15,29 @@
             <div class="row">
                 @foreach (var item in Model.kitap)
                 {
-                <div class="col-md-4 my-1">
-                    <div class="card">
-                        <img class="card-img-top" src="~/images/@item.ResimUrl" style="width:150px; height:150px" />
-                        <div class="card-body">
-                            <h5 class="card-title">@item.KitapAdi</h5>
-                            <p>@item.Yazar.YazarAdi @item.Yazar.YazarSoyadi</p>
-                            Puan:
-                            @for (int i = 0; i < 5; i++)
-                            {
-                                if (i < @item.Puan)
+                    <div class="col-md-4 my-1">
+                        <div class="card">
+                            <img class="card-img-top" src="~/images/@item.ResimUrl" style="width:150px; height:150px" />
+                            <div class="card-body">
+                                <h5 class="card-title">@item.KitapAdi</h5>
+                                <p>@item.Yazar.YazarAdi @item.Yazar.YazarSoyadi</p>
+                                Puan:
+                                @for (int i = 0; i < 5; i++)
                                 {
-                                    <span class="fa fa-star orange"></span>
-                                }
-                                else
-                                {
-                                    <span class="fa fa-star"></span>
-                                }
+                                    if (i < @item.Puan)
+                                    {
+                                        <span class="fa fa-star orange"></span>
+                                    }
+                                    else
+                                    {
+                                        <span class="fa fa-star"></span>
+                                    }
 
-                            }
-                            <a href="/KitapDetay/Index/@item.KitapId">Yorumları Oku</a>
+                                }
+                                <a href="/KitapDetay/Index/@item.KitapId">Yorumları Oku</a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 }
             </div>
         </div>
