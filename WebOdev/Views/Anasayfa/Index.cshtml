@@ -1,0 +1,30 @@
+﻿@model KategoryKitapModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        @foreach (var item in Model.kitap)
+        {
+            <div class="card">
+                <img class="card-img-top" />
+                <div class="card-body">
+                    <h5 class="card-title">@item.KitapAdi</h5>
+                    <p class="card-text">@item.Puan</p>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-md-4">
+        <table>
+            @foreach (var kategori in Model.kategori)
+            {
+                <tr>
+                    <td>@kategori.KategoriAdi</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using WebOdev.Models;
+/*
+Anasayfada tüm kitaplar listenecek
+Giriş Ve kayıt ol sayfası oluşturulacak
+Kitap sayfası
+iki dil olacak
+Admin Paneli
 
+ */
 namespace WebOdev.Controllers
 {
     public class HomeController : Controller
