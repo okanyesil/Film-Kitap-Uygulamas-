@@ -16,12 +16,20 @@ namespace WebOdev.Controllers
             _context = kitap;
 
         }
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
             var kitapModel = new KategoryKitapModel();
-             kitapModel.kategori = _context.Kategoris.ToList();
-             kitapModel.kitap = _context.Kitaps.ToList();
-             kitapModel.Yazar = _context.Yazars.ToList();
+            if(id ==  0)
+            {
+                kitapModel.kategori = _context.Kategoris.ToList();
+                kitapModel.kitap = _context.Kitaps.ToList();
+                kitapModel.Yazar = _context.Yazars.ToList();
+            }
+            else
+            {
+                kitapModel.kitap = _context.Kitaps.Where(data => data.KategoryId == id).ToList();
+                kitapModel.Yazar = _context.Yazars.ToList();
+            }
             return View(kitapModel);
         }
         public IActionResult Kategori(int id)

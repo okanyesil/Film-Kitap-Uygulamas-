@@ -1,0 +1,10 @@
+﻿@model List<Kategori>
+<ul class="list-group">
+    <li class="list-group-item"><a href="/Anasayfa/Index">Tüm Kategoriler</a></li>
+    @foreach (var item in Model)
+    {
+        <li class="list-group-item">
+            <a href="/Anasayfa/Index/@item.KategoriId">@item.KategoriAdi</a> 
+        </li>
+    }
+</ul>

@@ -41,14 +41,6 @@
 
     </div>
     <div class="col-md-2">
-        <h5>Kategoriler</h5>
-        <ul class="list-group">
-            @foreach (var kategori in Model.kategori)
-            {
-                <li class="list-group-item">
-                    <a href="/Anasayfa/Kategori/@kategori.KategoriId">@kategori.KategoriAdi</a>
-                </li>
-            }
-        </ul>
+        @await Component.InvokeAsync("Menu")
     </div>
 </div>

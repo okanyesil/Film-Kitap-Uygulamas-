@@ -14,10 +14,11 @@ namespace WebOdev.Controllers
         {
             _context = kitap;
         }
-        public IActionResult Index()
+        public IActionResult Index(int id)
         {
+            var kitapYorum = _context.Yorums.Where(yorum => yorum.YorumId ==id).ToList();
 
-            return View(_context.Yorums);
+            return View(kitapYorum);
         }
     }
 }
