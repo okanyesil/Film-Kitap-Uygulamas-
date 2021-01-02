@@ -1,0 +1,13 @@
+﻿@model List<Yorum>
+@{
+    ViewData["Title"] = "YorumSil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>YorumSil</h1>
+@foreach (var item in Model)
+{
+    <input type="text" class="form-control my-2" value="@item.YorumId" disabled id="yorumID" />
+    <textarea type="text" cols="50" rows="4" class="form-control my-2" id="yorumAdi">@item.Yorum1</textarea>
+    <button class="btn btn-outline-danger btn-block">Sil</button>
+}

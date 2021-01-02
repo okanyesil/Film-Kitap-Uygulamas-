@@ -28,6 +28,21 @@ namespace WebOdev.Controllers
         {
             return View();
         }
+        public IActionResult KitapSil(int id)
+        {
+            var kitap = _context.Kitaps.Where(kitap => kitap.KitapId == id).ToList();
+            return View(kitap);
+        }
+        public IActionResult KategoriSil(int id)
+        {
+            var kategori = _context.Kategoris.Where(kategori => kategori.KategoriId == id).ToList();
+            return View(kategori);
+        }
+        public IActionResult YorumSil(int id)
+        {
+            var yorum = _context.Yorums.Where(yorum => yorum.YorumId == id).ToList();
+            return View(yorum);
+        }
         public IActionResult Guncelle()
         {
             return View();

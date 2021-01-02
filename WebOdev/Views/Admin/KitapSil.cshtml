@@ -1,0 +1,20 @@
+﻿@model List<Kitap>
+@{
+    ViewData["Title"] = "KitapSil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yaptığınız İşlemleri Geri Alamazsınız</h1>
+
+@foreach (var item in Model)
+{
+    <input type="text" class="form-control my-2" disabled id="kitapID" value="@item.KitapId" />
+    <input type="text" class="form-control my-2" id="kitapAdi" value="@item.KitapAdi" />
+    <input type="text" class="form-control my-2" id="yazarID" value="@item.YazarId"/>
+    <input type="text" class="form-control my-2" id="KategoriID" value="@item.KategoryId" />
+    <input type="text" class="form-control my-2" id="YorumID" value="@item.YorumId"/>
+    <input type="text" class="form-control my-2" id="ResimUrl" value="@item.ResimUrl" />
+    <input type="text" class="form-control my-2" id="Puan" value="@item.Puan"/>
+    <button class="btn btn-outline-danger btn-block">Sil</button>
+}
+

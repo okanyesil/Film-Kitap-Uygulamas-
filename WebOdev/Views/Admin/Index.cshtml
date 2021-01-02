@@ -30,7 +30,7 @@
                 <td>@kitap.ResimUrl</td>
                 <td>@kitap.Puan</td>
                 <td>
-                    <a href="/Admin/Sil" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/KitapSil/@kitap.KitapId" class="btn btn-danger">Sil</a>
                     <a href="/Admin/Guncelle" class="btn btn-warning">Guncelle</a>
                 </td>
             </tr>
@@ -56,7 +56,7 @@
                 <td>@kategori.KategoriId</td>
                 <td>@kategori.KategoriAdi</td>
                 <td>
-                    <a href="/Admin/Sil" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/KategoriSil/@kategori.KategoriId" class="btn btn-danger">Sil</a>
                     <a href="/Admin/Guncelle" class="btn btn-warning">Guncelle</a>
                 </td>
             </tr>
@@ -82,7 +82,7 @@
                 <td>@yorum.YorumId</td>
                 <td>@yorum.Yorum1</td>
                 <td>
-                    <a href="/Admin/Sil" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/YorumSil/@yorum.YorumId" class="btn btn-danger">Sil</a>
                     <a href="/Admin/Guncelle" class="btn btn-warning">Guncelle</a>
                 </td>
             </tr>

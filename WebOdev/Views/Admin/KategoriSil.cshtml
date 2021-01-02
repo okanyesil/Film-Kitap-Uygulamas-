@@ -1,0 +1,15 @@
+﻿@model List<Kategori>
+@{
+    ViewData["Title"] = "KategoriSil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yaptığınız İşlemi Geri Alamazsınız</h1>
+
+@foreach (var item in Model)
+{
+    <input type="text" class="form-control my-2" value="@item.KategoriId" disabled id="kategoriID" />
+    <input type="text" class="form-control my-2" value="@item.KategoriAdi" id="kategoriAdi" />
+    <button class="btn btn-outline-danger btn-block">Sil</button>
+}
+
