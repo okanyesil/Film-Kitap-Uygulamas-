@@ -1,14 +1,46 @@
-﻿@model List<Yorum>
+﻿@model KitapYorumModel
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .orange {
+        color: orange;
+    }
+</style>
 <div class="container">
     <div class="row mt-2">
         <div class="col-md-10">
-            @foreach (var item in Model)
+            @foreach (var item in Model.Kitap)
             {
-                <h5>@item.Yorum1</h5>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="~/images/@item.ResimUrl" />
+                    </div>
+                    <div class="col-md-6">
+                        <h1>@item.KitapAdi</h1>
+                        Puan:
+                        @for (int i = 0; i < 5; i++)
+                        {
+                            if (i < @item.Puan)
+                            {
+                                <span class="fa fa-star orange"></span>
+                            }
+                            else
+                            {
+                                <span class="fa fa-star"></span>
+                            }
+
+                        }
+                    </div>
+                </div>
+                
+            }
+            <h1>Kitap Hakkında Yorumlar</h1>
+            @foreach (var yorum in Model.Yorumlar)
+            {
+                <h5>@yorum.Yorum1</h5>
             }
         </div>
         <div class="col-md-2">

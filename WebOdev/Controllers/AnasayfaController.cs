@@ -16,7 +16,7 @@ namespace WebOdev.Controllers
             _context = kitap;
 
         }
-        public IActionResult Index(int id)
+        public IActionResult Index(int id = 0)
         {
             var kitapModel = new KategoryKitapModel();
             if(id ==  0)
