@@ -1,0 +1,121 @@
+﻿@model KitapYazarYorumKategoriModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="d-flex justify-content-center">Kitaplar</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Kitap id</th>
+            <th scope="col">Kitap Adi</th>
+            <th scope="col">Yazar ID</th>
+            <th scope="col">Kategory ID</th>
+            <th scope="col">Yorum ID</th>
+            <th scope="col">Resim Url</th>
+            <th scope="col">puan</th>
+            <th scope="col">İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kitap in Model.Kitaplar)
+        {
+            <tr>
+                <td>@kitap.KitapId</td>
+                <td>@kitap.KitapAdi</td>
+                <td>@kitap.YazarId</td>
+                <td>@kitap.KategoryId</td>
+                <td>@kitap.YorumId</td>
+                <td>@kitap.ResimUrl</td>
+                <td>@kitap.Puan</td>
+                <td>
+                    <a href="/Admin/Sil" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/Guncelle" class="btn btn-warning">Guncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+<h1 class="d-flex justify-content-center">Kategori</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Kategori id</th>
+            <th scope="col">Kategori Adi</th>
+            <th scope="col">İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var kategori in Model.Kategoriler)
+        {
+            <tr>
+                <td>@kategori.KategoriId</td>
+                <td>@kategori.KategoriAdi</td>
+                <td>
+                    <a href="/Admin/Sil" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/Guncelle" class="btn btn-warning">Guncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+
+<h1 class="d-flex justify-content-center">Yorumlar</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Yorum id</th>
+            <th scope="col">Yorum Adi</th>
+            <th scope="col">İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var yorum in Model.Yorumlar)
+        {
+            <tr>
+                <td>@yorum.YorumId</td>
+                <td>@yorum.Yorum1</td>
+                <td>
+                    <a href="/Admin/Sil" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/Guncelle" class="btn btn-warning">Guncelle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+<h1 class="d-flex justify-content-center">Yazar</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Yazar id</th>
+            <th scope="col">Yazar Adı</th>
+            <th scope="col">Yazar Soyadı</th>
+            <th scope="col">İşlem</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var yazar in Model.Yazarlar)
+        {
+            <tr>
+                <td>@yazar.YazarId</td>
+                <td>@yazar.YazarAdi</td>
+                <td>@yazar.YazarSoyadi</td>
+                <td>
+                    <a href="/Admin/Sil" class="btn btn-danger">Sil</a>
+                    <a href="/Admin/Guncelle" class="btn btn-warning">Guncelle</a>
+                </td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
