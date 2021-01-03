@@ -1,20 +1,28 @@
-﻿@model List<Kitap>
+﻿@model Kitap
 @{
     ViewData["Title"] = "KitapSil";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h1>Yaptığınız İşlemleri Geri Alamazsınız</h1>
-
-@foreach (var item in Model)
-{
-    <input type="text" class="form-control my-2" disabled id="kitapID" value="@item.KitapId" />
-    <input type="text" class="form-control my-2" id="kitapAdi" value="@item.KitapAdi" />
-    <input type="text" class="form-control my-2" id="yazarID" value="@item.YazarId"/>
-    <input type="text" class="form-control my-2" id="KategoriID" value="@item.KategoryId" />
-    <input type="text" class="form-control my-2" id="YorumID" value="@item.YorumId"/>
-    <input type="text" class="form-control my-2" id="ResimUrl" value="@item.ResimUrl" />
-    <input type="text" class="form-control my-2" id="Puan" value="@item.Puan"/>
+<form asp-controller="Kitap" asp-action="KitapSil" method="post">
+    <label>Kitap ID</label>
+    <input type="text" class="form-control my-2" readonly asp-for="KitapId" />
+    <label>Kitap Adı</label>
+    <input type="text" class="form-control my-2" readonly asp-for="KitapAdi" />
+    <label>Yazar ID</label>
+    <input type="text" class="form-control my-2" readonly asp-for="YazarId" />
+    <label>Kategori ID</label>
+    <input type="text" class="form-control my-2" readonly asp-for="KategoryId" />
+    <label>Yorum ID</label>
+    <input type="text" class="form-control my-2" readonly asp-for="YorumId" />
+    <label>Resim URL</label>
+    <input type="text" class="form-control my-2" readonly asp-for="ResimUrl" />
+    <label>Puan</label>
+    <input type="text" class="form-control my-2" readonly asp-for="Puan" />
     <button class="btn btn-outline-danger btn-block">Sil</button>
-}
+</form>
+
+    
+
 

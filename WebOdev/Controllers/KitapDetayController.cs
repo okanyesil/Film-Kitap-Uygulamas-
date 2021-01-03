@@ -19,8 +19,6 @@ namespace WebOdev.Controllers
             var kitapYorum = new KitapYorumModel();
             kitapYorum.Kitap = _context.Kitaps.Where(kitap => kitap.KitapId == id);
             kitapYorum.Yorumlar = _context.Yorums.Where(yorum => yorum.YorumId == _context.Kitaps.Where(kitap => kitap.KitapId == id).Select(kitap =>  kitap.YorumId).SingleOrDefault());
-            // var kitapBilgisi =
-
             return View(kitapYorum);
         }
     }

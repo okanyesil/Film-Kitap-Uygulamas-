@@ -30,7 +30,12 @@ namespace WebOdev.Controllers
         }
         public IActionResult KitapSil(int id)
         {
-            var kitap = _context.Kitaps.Where(kitap => kitap.KitapId == id).ToList();
+            var kitap = _context.Kitaps.Find(id);
+            return View(kitap);
+        }
+        public IActionResult KitapGuncelle(int id)
+        {
+            var kitap = _context.Kitaps.Find(id);
             return View(kitap);
         }
         public IActionResult KategoriSil(int id)

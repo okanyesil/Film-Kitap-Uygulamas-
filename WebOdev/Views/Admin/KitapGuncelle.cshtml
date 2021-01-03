@@ -1,0 +1,24 @@
+﻿@model Kitap
+@{
+    ViewData["Title"] = "KitapGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yaptığınız İşlemleri Geri Alamazsınız</h1>
+<form asp-controller="Kitap" asp-action="KitapGuncelle" method="post">
+    <label>Kitap ID</label>
+    <input type="text" class="form-control my-2" readonly asp-for="KitapId" />
+    <label>Kitap Adı</label>
+    <input type="text" class="form-control my-2"  asp-for="KitapAdi" />
+    <label>Yazar ID</label>
+    <input type="text" class="form-control my-2"  asp-for="YazarId" />
+    <label>Kategori ID</label>
+    <input type="text" class="form-control my-2"  asp-for="KategoryId" />
+    <label>Yorum ID</label>
+    <input type="text" class="form-control my-2"  asp-for="YorumId" />
+    <label>Resim URL</label>
+    <input type="text" class="form-control my-2"  asp-for="ResimUrl" />
+    <label>Puan</label>
+    <input type="text" class="form-control my-2"  asp-for="Puan" />
+    <button class="btn btn-outline-warning btn-block">Guncelle</button>
+</form>
