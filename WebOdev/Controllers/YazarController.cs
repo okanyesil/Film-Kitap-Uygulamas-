@@ -18,12 +18,12 @@ namespace WebOdev.Controllers
         {
             return View();
         }
-        public IActionResult YazarSil(int id)
+        public IActionResult YazarSil(Yazar yazar)
         {
-            var yazar = _context.Yazars.Find(id);
+            var yazarGetir = _context.Yazars.Find(yazar.YazarId);
             try
             {
-                _context.Yazars.Remove(yazar);
+                _context.Yazars.Remove(yazarGetir);
                 _context.SaveChanges();
             }
             catch(Exception e)

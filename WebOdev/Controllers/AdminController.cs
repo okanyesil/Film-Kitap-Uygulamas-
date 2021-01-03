@@ -38,6 +38,11 @@ namespace WebOdev.Controllers
             var kategori = _context.Kategoris.Find(id);
             return View(kategori);
         }
+        public IActionResult KategoriGuncelle(int id)
+        {
+            var kategori = _context.Kategoris.Find(id);
+            return View(kategori);
+        }
         public IActionResult YorumSil(int id)
         {
             var yorum = _context.Yorums.Find(id);

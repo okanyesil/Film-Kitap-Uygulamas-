@@ -19,12 +19,12 @@ namespace WebOdev.Controllers
         {
             return View();
         }
-        public IActionResult YorumSil(int id)
+        public IActionResult YorumSil(Yorum yorum)
         {
-            var yorum = _context.Yorums.Find(id);
+            var yorumGetir = _context.Yorums.Find(yorum.YorumId);
             try
             {
-                _context.Remove(yorum);
+                _context.Remove(yorumGetir);
                 _context.SaveChanges();
             }
             catch(Exception e)

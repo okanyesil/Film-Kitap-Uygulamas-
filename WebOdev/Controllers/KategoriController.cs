@@ -18,22 +18,27 @@ namespace WebOdev.Controllers
         {
             return View();
         }
-        public IActionResult KategoriSil(int id)
+        [HttpPost]
+        public IActionResult KategoriSil(Kategori kategori)
         {
-            if(id == 0)
-            {
-                return BadRequest();
-            }
-            var kategori = _context.Kategoris.Find(id);
+            var kategoriGetir = _context.Kategoris.Find(kategori.KategoriId);
             try
             {
-                _context.Kategoris.Remove(kategori);
+                _context.Kategoris.Remove(kategoriGetir);
                 _context.SaveChanges();
             }
             catch(Exception e)
             {
                 Redirect("/Hata/Yorum");
             }
+            return Redirect("/Admin/Index");
+        }
+        public IActionResult KategoriGuncelle(Kategori kategori)
+        {
+            var kategoriGetir = _context.Kategoris.Find(kategori.KategoriId);
+            kategoriGetir.KategoriAdi = kategori.KategoriAdi;
+            _context.Update(kategoriGetir);
+            _context.SaveChanges();
             return Redirect("/Admin/Index");
         }
     }
