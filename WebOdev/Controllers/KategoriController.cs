@@ -41,5 +41,11 @@ namespace WebOdev.Controllers
             _context.SaveChanges();
             return Redirect("/Admin/Index");
         }
+        public IActionResult KategoriEkle(Kategori kategori)
+        {
+            _context.Kategoris.Add(kategori);
+            _context.SaveChanges();
+            return Redirect("/Admin/Index");
+        }
     }
 }

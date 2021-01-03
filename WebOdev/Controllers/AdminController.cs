@@ -28,6 +28,10 @@ namespace WebOdev.Controllers
         {
             return View();
         }
+        public IActionResult KitapEkle()
+        {
+            return View();
+        }
         public IActionResult KitapSil(int id)
         {
             var kitap = _context.Kitaps.Find(id);
@@ -48,6 +52,10 @@ namespace WebOdev.Controllers
             var kategori = _context.Kategoris.Find(id);
             return View(kategori);
         }
+        public IActionResult KategoriEkle()
+        {
+            return View();
+        }
         public IActionResult YorumSil(int id)
         {
             var yorum = _context.Yorums.Find(id);
@@ -58,6 +66,10 @@ namespace WebOdev.Controllers
             var yorum = _context.Yorums.Find(id);
             return View(yorum);
         }
+        public IActionResult YorumEkle()
+        {
+            return View();
+        }
         public IActionResult YazarSil(int id)
         {
             var yazar = _context.Yazars.Find(id);
@@ -67,6 +79,10 @@ namespace WebOdev.Controllers
         {
             var yazar = _context.Yazars.Find(id);
             return View(yazar);
+        }
+        public IActionResult YazarEkle()
+        {
+            return View();
         }
         public IActionResult Guncelle()
         {

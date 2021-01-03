@@ -57,5 +57,19 @@ namespace WebOdev.Controllers
             return Redirect("/Admin/Index");
 
         }
+        [HttpPost]
+        public IActionResult KitapEkle(Kitap kitap)
+        {
+            try
+            {
+                _context.Kitaps.Add(kitap);
+                _context.SaveChanges();
+            }
+            catch(Exception e)
+            {
+                return BadRequest();
+            }
+            return Redirect("/Admin/Index");
+        }
     }
 }
