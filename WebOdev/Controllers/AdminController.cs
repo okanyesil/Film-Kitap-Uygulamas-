@@ -35,22 +35,27 @@ namespace WebOdev.Controllers
         }
         public IActionResult KategoriSil(int id)
         {
-            var kategori = _context.Kategoris.Where(kategori => kategori.KategoriId == id).ToList();
+            var kategori = _context.Kategoris.Find(id);
             return View(kategori);
         }
         public IActionResult YorumSil(int id)
         {
-            var yorum = _context.Yorums.Where(yorum => yorum.YorumId == id).ToList();
+            var yorum = _context.Yorums.Find(id);
+            return View(yorum);
+        }
+        public IActionResult YorumGuncelle(int id)
+        {
+            var yorum = _context.Yorums.Find(id);
             return View(yorum);
         }
         public IActionResult YazarSil(int id)
         {
-            var yazar = _context.Yazars.Where(yazar => yazar.YazarId == id).ToList();
+            var yazar = _context.Yazars.Find(id);
             return View(yazar);
         }
         public IActionResult YazarGuncelle(int id)
         {
-            var yazar = _context.Yazars.Where(yazar => yazar.YazarId == id).ToList();
+            var yazar = _context.Yazars.Find(id);
             return View(yazar);
         }
         public IActionResult Guncelle()

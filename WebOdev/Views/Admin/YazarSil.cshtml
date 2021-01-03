@@ -1,17 +1,18 @@
-﻿@model List<Yazar>
+﻿@model Yazar
 @{
     ViewData["Title"] = "YazarSil";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h1>YazarSil</h1>
-    @foreach (var item in Model)
-    {
-        <span>Yazar ID: </span><input type="text" class="form-control my-2" disabled value="@item.YazarId" />
-        <span>Yazar Adı: </span><input type="text" class="form-control my-2" disabled value="@item.YazarAdi" />
-        <span>Yazar Adı: </span><input type="text" class="form-control my-2" disabled value="@item.YazarSoyadi" />
-        <a  href="/Yazar/YazarSil/@item.YazarId" class="btn btn-outline-danger btn-block">Sil</a>
-    }
+<form asp-action="YazarSil" asp-controller="Yazar" method="post">
+    <span>Yazar ID: </span><input type="text" class="form-control my-2" readonly asp-for="YazarId" />
+    <span>Yazar Adı: </span><input type="text" class="form-control my-2" readonly asp-for="YazarAdi" />
+    <span>Yazar Adı: </span><input type="text" class="form-control my-2" readonly asp-for="YazarSoyadi" />
+    <button type="submit"  class="btn btn-outline-danger btn-block">Sil</button>
+</form>
+        
+    
 
 
 

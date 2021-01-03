@@ -1,8 +1,23 @@
-﻿
+﻿@model Yazar
 @{
     ViewData["Title"] = "YazarGuncelle";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
+
+
 <h1>YazarGuncelle</h1>
 
+<form asp-controller="Yazar" asp-action="YazarGuncelle" method="post">
+
+        <span>Yazar ID: </span>
+        <input type="text" class="form-control my-2"  asp-for="YazarId" readonly/>
+        <span>Yazar Adı: </span>
+        <input type="text" class="form-control my-2" asp-for="YazarAdi"  />
+        <span>Yazar Adı: </span>
+        <input type="text" class="form-control my-2" asp-for="YazarSoyadi"  />
+    
+
+    <button type="submit" class="btn btn-outline-danger btn-block">Guncelle</button>
+
+</form>

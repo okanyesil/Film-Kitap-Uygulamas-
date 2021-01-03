@@ -16,5 +16,14 @@ namespace WebOdev.Controllers
         {
             return View();
         }
+        public IActionResult Yorum()
+        {
+            return View();
+        }
+        public IActionResult Kategori()
+        {
+            return View();
+        }
+
     }
 }

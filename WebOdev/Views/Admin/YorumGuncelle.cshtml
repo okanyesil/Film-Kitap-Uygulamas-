@@ -1,0 +1,13 @@
+﻿@model Yorum
+@{
+    ViewData["Title"] = "YorumGuncelle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Yorum Guncelle</h1>
+
+<form asp-action="YorumGuncelle" asp-controller="Yorum" method="post">
+    <input type="text" class="form-control my-2" asp-for="YorumId" readonly/>
+    <textarea asp-for="Yorum1" cols="50" rows="3" class="form-control my-2"></textarea>
+    <button class="btn btn-block btn-outline-warning">Guncelle</button>
+</form>

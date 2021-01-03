@@ -1,15 +1,16 @@
-﻿@model List<Kategori>
+﻿@model Kategori
 @{
     ViewData["Title"] = "KategoriSil";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <h1>Yaptığınız İşlemi Geri Alamazsınız</h1>
+<form asp-action="KategoriSil" asp-controller="Kategori" method="post">
+    <input type="text" class="form-control my-2" asp-for="KategoriId" readonly  />
+    <input type="text" class="form-control my-2" asp-for="KategoriAdi" />
+    <button type="submit" class="btn btn-outline-danger btn-block">Sil</button>
+</form>
 
-@foreach (var item in Model)
-{
-    <input type="text" class="form-control my-2" value="@item.KategoriId" disabled id="kategoriID" />
-    <input type="text" class="form-control my-2" value="@item.KategoriAdi" id="kategoriAdi" />
-    <button class="btn btn-outline-danger btn-block">Sil</button>
-}
+   
+
 

@@ -7,49 +7,49 @@ using WebOdev.Models;
 
 namespace WebOdev.Controllers
 {
-    public class YazarController : Controller
+    public class YorumController : Controller
     {
         private readonly KitapDBContext _context;
-        public YazarController(KitapDBContext kitap)
+        public YorumController(KitapDBContext kitap)
         {
             _context = kitap;
+
         }
         public IActionResult Index()
         {
             return View();
         }
-        public IActionResult YazarSil(int id)
+        public IActionResult YorumSil(int id)
         {
-            var yazar = _context.Yazars.Find(id);
+            var yorum = _context.Yorums.Find(id);
             try
             {
-                _context.Yazars.Remove(yazar);
+                _context.Remove(yorum);
                 _context.SaveChanges();
             }
             catch(Exception e)
             {
-                return Redirect("/Hata/Yazar");
+                return Redirect("/Hata/Yorum");
             }
-            return Redirect("/Admin/Index");
+            return Redirect("/Anasayfa/Index");
         }
-        [HttpPost]
-        public IActionResult YazarGuncelle(Yazar yazar)
+         [HttpPost]
+        public IActionResult YorumGuncelle(Yorum yorum)
         {
-            if(yazar.YazarId == 0)
+            if(yorum.YorumId == 0)
             {
                 return NotFound();
             }
-            var yazarGetir = _context.Yazars.Find(yazar.YazarId);
-            yazarGetir.YazarAdi = yazar.YazarAdi;
-            yazarGetir.YazarSoyadi = yazar.YazarSoyadi;
-            _context.Update(yazarGetir);
+            var yorumGetir = _context.Yorums.Find(yorum.YorumId);
+            yorumGetir.Yorum1 = yorum.Yorum1;
+            _context.Yorums.Update(yorumGetir);
             _context.SaveChanges();
             return Redirect("/Admin/Index");
         }
         [HttpPost]
-        public IActionResult YazarEkle(Yazar yazar)
+        public IActionResult YorumEkle(Yorum yorum)
         {
-            _context.Yazars.Add(yazar);
+            _context.Add(yorum);
             _context.SaveChanges();
             return Redirect("/Admin/Index");
         }
