@@ -1,6 +1,6 @@
 # Film Kitap Uygulaması
 
-Kemal Can Çavdaroğlu ve Furkan Kemal Karabay ile birlikte geliştirdiğimiz Web Ödevimiz
+ Furkan Kemal Karabay ile birlikte geliştirdiğimiz Web Ödevimiz
 
 ## Kullanılan Teknolojiler
 
