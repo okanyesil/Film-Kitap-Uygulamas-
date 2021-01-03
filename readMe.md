@@ -1,4 +1,4 @@
-# Film Kitap Uygulaması
+#  Kitap Uygulaması
 
  Furkan Kemal Karabay ile birlikte geliştirdiğimiz Web Ödevimiz
 
