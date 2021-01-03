@@ -43,6 +43,16 @@ namespace WebOdev.Controllers
             var yorum = _context.Yorums.Where(yorum => yorum.YorumId == id).ToList();
             return View(yorum);
         }
+        public IActionResult YazarSil(int id)
+        {
+            var yazar = _context.Yazars.Where(yazar => yazar.YazarId == id).ToList();
+            return View(yazar);
+        }
+        public IActionResult YazarGuncelle(int id)
+        {
+            var yazar = _context.Yazars.Where(yazar => yazar.YazarId == id).ToList();
+            return View(yazar);
+        }
         public IActionResult Guncelle()
         {
             return View();

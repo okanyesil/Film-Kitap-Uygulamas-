@@ -1,0 +1,17 @@
+﻿@model List<Yazar>
+@{
+    ViewData["Title"] = "YazarSil";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>YazarSil</h1>
+    @foreach (var item in Model)
+    {
+        <span>Yazar ID: </span><input type="text" class="form-control my-2" disabled value="@item.YazarId" />
+        <span>Yazar Adı: </span><input type="text" class="form-control my-2" disabled value="@item.YazarAdi" />
+        <span>Yazar Adı: </span><input type="text" class="form-control my-2" disabled value="@item.YazarSoyadi" />
+        <a  href="/Yazar/YazarSil/@item.YazarId" class="btn btn-outline-danger btn-block">Sil</a>
+    }
+
+
+
