@@ -1,6 +1,6 @@
 #  Kitap Uygulaması
 
- Furkan Kemal Karabay ile birlikte geliştirdiğimiz Web Ödevimiz
+Web Ödevi
 
 ## Kullanılan Teknolojiler
 
